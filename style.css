@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+}
+
+html {
+    transition: all 0.5s ease-in;
+}
+
+html.dark {
+    --primary-color: #fff;
+    --secondary-color: #111;
+}
+
+body {
+    background-color:  var(--secondary-color);
+    font-family: 'Rajdhani', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.toggle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.toggle:focus {
+    outline: none;
+}
+
+.toggle:active {
+    transform: scale(0.98);
+}
+
+.clock-container {
+    margin: 10px 0;
+}
+
+.clock {
+    position: relative;
+    width: 40vw;
+    height: 40vh;
+}
+
+.needle {
+    background-color: var(--primary-color);
+    width: 3px;
+    height: 65px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transition: 0.5s ease-in;
+}
+
+.hour {
+   transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px; 
+ }
+
+ .second {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: #ff0000;
+ }
+
+ .center-point {
+    background-color: #ff0000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ .center-point:after {
+    content: '';
+    background-color: #111;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.time {
+    color: var(--primary-color);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.date {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.date span {
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    }
